@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Collegium Contact Submission</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #1d4ed8;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #dbeafe, #ffffff, #bfdbfe);
+    }
+
+    .header img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1d4ed8;
+      margin: 10px 0;
+    }
+
+    .content {
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1e3a8a;
+      text-align: left;
+    }
+
+    .footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #1e40af;
+      background: #dbeafe;
+    }
+
+    @media(max-width: 480px) {
+      .title { font-size: 20px; }
+      .content { font-size: 15px; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <img src={{logoUrl}} />
+      <div class="title">New Contact Submission</div>
+      <div class="subtitle" style="color:#1e40af;">
+        From Collegium Website
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <p><strong>Admin Alert:</strong></p>
+
+      <p>A new user has submitted their interest on the Collegium platform.</p>
+
+      <p>
+        <strong>Applicant Details:</strong><br/><br/>
+        <strong>Name:</strong> {{fullName}} <br/>
+        <strong>Email:</strong> {{email}} <br/>
+        <strong>University:</strong> {{university}} <br/>
+      </p>
+
+      <p>
+        Please review and reach out if needed.
+      </p>
+
+      <p style="margin-top:25px;">
+        <strong>Collegium System Notification</strong>
+      </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Collegium Admin Notification • 2025  
+      <br />
+      Automated Email — Do Not Reply.
+    </div>
+
+  </div>
+</body>
+</html>

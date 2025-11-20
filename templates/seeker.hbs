@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #1d4ed8;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #dbeafe, #ffffff, #bfdbfe);
+    }
+
+    .header img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1d4ed8;
+      margin: 10px 0;
+    }
+
+    .content {
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1e3a8a;
+      text-align: left;
+    }
+
+    .footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #1e40af;
+      background: #dbeafe;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <img src="{{logoUrl}}" />
+      <div class="title">Your Application Is Received!</div>
+    </div>
+
+    <div class="content">
+      <p>Hi <strong>{{fullName}}</strong>,</p>
+
+      <p>
+        Thank you for applying for the role of 
+        <strong>{{role}}</strong> at <strong>Collegium</strong>.
+      </p>
+
+      <p>
+        We have received your application! Our team will review your profile, 
+        and if shortlisted, we will get back to you soon.
+      </p>
+
+      <p><strong>Your Details:</strong></p>
+
+      <ul>
+        <li><strong>Name:</strong> {{fullName}}</li>
+        <li><strong>Email:</strong> {{email}}</li>
+        <li><strong>Phone:</strong> {{phone}}</li>
+        <li><strong>University:</strong> {{university}}</li>
+        <li><strong>Department:</strong> {{department}}</li>
+        <li><strong>Year:</strong> {{year}}</li>
+        <li><strong>Role Applied:</strong> {{role}}</li>
+      </ul>
+
+      <p><strong>Your Reason:</strong><br>{{reason}}</p>
+
+      <p style="margin-top:25px;">
+        <strong>Regards,<br/>Team Collegium</strong>
+      </p>
+    </div>
+
+    <div class="footer">
+      © Collegium 2025 · Create | Connect | Collaborate
+      <br/> Automated Email — Do Not Reply.
+    </div>
+
+  </div>
+</body>
+</html>

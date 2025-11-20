@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Collegium</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #1d4ed8;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #dbeafe, #ffffff, #bfdbfe);
+    }
+
+    .header img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1d4ed8;
+      margin: 10px 0;
+    }
+
+    .content {
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1e3a8a;
+      text-align: left;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin: 20px 0;
+      background-color: #1d4ed8;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #1e40af;
+      background: #dbeafe;
+    }
+
+    @media(max-width: 480px) {
+      .title { font-size: 20px; }
+      .content { font-size: 15px; }
+      .btn { padding: 10px 16px; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <img src={{logoUrl}} />
+      <div class="title">Welcome to Collegium</div>
+      <div class="subtitle" style="color:#1e40af;">
+        Create • Connect • Collaborate
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <p>Hi <strong>{{fullName}}</strong>,</p>
+
+      <p>
+        Thank you for showing interest in <strong>Collegium</strong> — the platform
+        that empowers students, creators, and communities.
+      </p>
+
+      <p>
+        Your details:<br/>
+        <strong>Email:</strong> {{email}} <br/>
+        <strong>University:</strong> {{university}}
+      </p>
+
+      <p>
+        You will be among the first to experience our upcoming app where you can:
+      </p>
+
+      <ul>
+        <li>✨ Create your profile and showcase your journey</li>
+        <li>🤝 Connect with students, clubs, and opportunities</li>
+        <li>🚀 Collaborate on projects, events, and communities</li>
+      </ul>
+
+      <p>
+        We will notify you as soon as the app becomes available.  
+        Stay ready — exciting things are coming!
+      </p>
+
+      <p style="margin-top:25px;">
+        <strong>Warm Regards,<br/>The Collegium Team</strong>
+      </p>
+
+      <a href="https://collegium.asiandigitalworld.com" class="btn">
+        Visit Our Website
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      © Collegium 2025 · Create | Connect | Collaborate  
+      <br />
+      You received this email because you expressed interest in our platform.
+      <br/> Automated Email — Do Not Reply.
+    </div>
+
+  </div>
+</body>
+</html>
