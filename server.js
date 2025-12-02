@@ -11,6 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({ origin: "https://collegium.asiandigitalworld.com" }));
+// app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // ---------------------------
