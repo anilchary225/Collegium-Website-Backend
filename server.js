@@ -57,7 +57,7 @@ app.post("/connect", async (req, res) => {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: email,
-      subject: "Welcome to Collegium – Your Campus Verification",
+      subject: "Welcome to Collegieum – Your Campus Verification",
       html: loadTemplate("connectUser.hbs", {
         fullName,
         university,
@@ -70,7 +70,7 @@ app.post("/connect", async (req, res) => {
     // await transporter.sendMail({
     //   from: process.env.SMTP_USER,
     //   to: process.env.ADMIN_EMAIL,
-    //   subject: "New Collegium Connect Submission",
+    //   subject: "New Collegieum Connect Submission",
     //   html: loadTemplate("connectAdmin.hbs", {
     //     fullName,
     //     university,
@@ -107,7 +107,7 @@ app.post("/join-with-us", async (req, res) => {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: email,
-      subject: "Your Application to Join Collegium",
+      subject: "Your Application to Join Collegieum",
       html: loadTemplate("seeker.hbs", {
         fullName,
         email,
