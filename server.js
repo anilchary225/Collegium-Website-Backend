@@ -10,7 +10,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors("https://collegieum.com"));
+app.use(
+  cors({
+    origin: "https://collegieum.com",
+    methods: ["POST", "GET"],
+  })
+);
 // app.use(cors({ origin: "*" }));
 app.use(express.json());
 
@@ -50,12 +55,20 @@ function loadTemplate(filename, data) {
 // 1️⃣ CONNECT FORM (contact)
 // ---------------------------
 app.post("/connect", async (req, res) => {
-  const { fullName, university, email, logoUrl } = req.body;
-
   try {
-    // Email → To USER
+    // console.log("BODY:", req.body);
+
+    const { fullName, university, email, logoUrl } = req.body;
+
+    // ✅ VALIDATION (VERY IMPORTANT)
+    if (!email || !fullName) {
+      return res.status(400).json({
+        message: "Full name and email are required",
+      });
+    }
+
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: `"Collegieum" <${process.env.SMTP_USER}>`,
       to: email,
       subject: "Welcome to Collegieum – Your Campus Verification",
       html: loadTemplate("connectUser.hbs", {
@@ -66,23 +79,14 @@ app.post("/connect", async (req, res) => {
       }),
     });
 
-    // Email → To ADMIN
-    // await transporter.sendMail({
-    //   from: process.env.SMTP_USER,
-    //   to: process.env.ADMIN_EMAIL,
-    //   subject: "New Collegieum Connect Submission",
-    //   html: loadTemplate("connectAdmin.hbs", {
-    //     fullName,
-    //     university,
-    //     email,
-    //     logoUrl,
-    //   }),
-    // });
-
-    res.status(200).send("Your form submitted successfully.");
+    res.status(200).json({
+      message: "Your form submitted successfully",
+    });
   } catch (err) {
-    console.log(err);
-    res.status(500).send("Failed to send emails.");
+    console.error("CONNECT MAIL ERROR:", err);
+    res.status(500).json({
+      message: "Failed to send email",
+    });
   }
 });
 
